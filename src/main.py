@@ -4,13 +4,16 @@ from fastapi import FastAPI, File, Response, UploadFile
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 from PIL import Image, ImageOps
-from fastapi_cors import CORS
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
+origins = ["*"]
+
 app.add_middleware(
-    CORS,
-    allow_origins=["*"],
+    CORSMiddleware,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

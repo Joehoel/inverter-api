@@ -5,12 +5,19 @@ description = "Add your description here"
 authors = [
     { name = "Joël Kuijper", email = "jmkuijper@outlook.com" }
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.28.0",
+    "python-multipart>=0.0.9",
+    "python-pptx>=0.6.23",
+    "pillow>=10.2.0",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
-[project.scripts]
-hello = "inverter_api:hello"
+[tool.rye.scripts]
+dev = "uvicorn src.main:app --reload"
+
 
 [build-system]
 requires = ["hatchling"]
@@ -24,4 +31,4 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/inverter_api"]
+packages = ["src/"]

@@ -11,11 +11,15 @@
 annotated-types==0.6.0
 anyio==4.3.0
 click==8.1.7
+environs==11.0.0
 fastapi==0.110.0
+fastapi-cors==0.0.6
 h11==0.14.0
 httptools==0.6.1
 idna==3.6
 lxml==5.1.0
+marshmallow==3.21.1
+packaging==24.0
 pillow==10.2.0
 pydantic==2.6.3
 pydantic-core==2.16.3

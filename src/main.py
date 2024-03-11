@@ -4,8 +4,23 @@ from fastapi import FastAPI, File, Response, UploadFile
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 from PIL import Image, ImageOps
+from fastapi_cors import CORS
 
 app = FastAPI()
+
+app.add_middleware(
+    CORS,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+# Healthcheck endpoint
+@app.get("/")
+def health():
+    return {"status": "ok"}
 
 
 @app.post("/upload")

@@ -10,5 +10,5 @@ rye run dev
 To test the API you can use the following command:
 
 ```sh
-curl -X POST -F "upload=@white.pptx" https://inverter-api.fly.dev/upload -o black.pptx
+curl -X POST -F "upload=@example/white.pptx" https://inverter-api.fly.dev/upload -o ./example/black.pptx
 ```
